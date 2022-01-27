@@ -21,7 +21,6 @@ class $classname$ extends Component {
     var counter = Reg(UInt(24 bits)) init (0)
     counter := counter + 1
 
-    // The msb of leds will blink at 1Hz!
     when(io.user_button) {
       io.leds := counter(23 downto 18)
     }.otherwise {
