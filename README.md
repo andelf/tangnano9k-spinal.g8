@@ -1,5 +1,7 @@
 # tangnano9k-spinal.g8
 
+A [Giter8][g8] template of a simple Spinal project, for Tang Nano 9K board!
+
 SpinalHDL + Tang Nano 9K!
 
 - An example project in template(yes, Blinky), ready to run, flash
@@ -7,14 +9,12 @@ SpinalHDL + Tang Nano 9K!
   - Demonstrate the usage of `gw_sh`
 - Generate a project(.gprj) for Gowin IDE (expiremental)
 
-A [Giter8][g8] template of a simple Spinal project, for Tang Nano 9K board!
-
 ## Usage
 
-(requires `sbt`)
+**requires `sbt`**
 
 ```console
-$ sbt new andelf/tangnano9k-spinal.
+$ sbt new andelf/tangnano9k-spinal.g8
 [info] welcome to sbt 1.5.7 (N/A Java 17.0.1)
 [info] set current project to new (in build file:/tmp/sbt_b9087229/new/)
 
