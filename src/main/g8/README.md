@@ -20,14 +20,14 @@ Add `Gowin/IDE/bin` to your `PATH`.
 ```
 openFPGALoader --detect
 
-make  # compile .fs bitstream
+make        # compile to verilog, synth, PnR
 
-make flash  # usage openFPGALoader to program
+make flash  # use openFPGALoader to program
 ```
 
 ### Directories
 
-- `src/main`: Spinal Code in Scala
+- `src/main`: Spinal code in Scala
 - `src/board`: The Physical Constraints file
 - `src/build`: Build scripts, syth, PnR
 - `rtl/*.v`: The generated verilog file

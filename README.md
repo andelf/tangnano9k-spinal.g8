@@ -33,10 +33,10 @@ $ sbt "runMain com.example.Main"  # generate verilog under rtl/
 
 Then you can open Blinky.gprj with Gowin IDE!
 
-Or under Linux(more document at your /path/to/project/README.md):
+Or under Linux(refer `/path/to/project/README.md`):
 
 ```console
-$ make
+$ make  # translate verilog, synth, PnR
 $ make flash  # requires openFPGALoader
 ```
 
