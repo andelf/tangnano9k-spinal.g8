@@ -13,5 +13,3 @@ set_option -output_base_name $classname$
 set_option -cst_warn_to_error 0
 set_option -bit_security 0
 
-run syn
-run pnr
