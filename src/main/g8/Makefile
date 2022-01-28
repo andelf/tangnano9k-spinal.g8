@@ -1,9 +1,9 @@
 # Genreated by project template
 
-# GOWIN_PREFIX=
+# GOWINHOME=
 
-ifneq (\$(GOWIN_PREFIX),)
-GW_SH := \$(GOWIN_PREFIX)/IDE/bin/gw_sh
+ifneq (\$(GOWINHOME),)
+GW_SH := \$(GOWINHOME)/IDE/bin/gw_sh
 else
 GW_SH := gw_sh
 endif
