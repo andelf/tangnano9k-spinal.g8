@@ -31,7 +31,7 @@ class $classname$ extends Component {
 
 // Run this main to generate the RTL
 object Main {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     new java.io.File("rtl").mkdirs
     SpinalConfig(targetDirectory = "rtl").generateVerilog(new $classname$)
   }
