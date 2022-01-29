@@ -11,14 +11,15 @@ endif
 SOURCES = src/main/scala/$package;format="packaged"$/$classname$.scala
 VERILOG_FILE := rtl/$classname$.v
 BITSTREAM_FILE := impl/pnr/$classname$.fs
+REPORT_FILE := impl/pnr/$classname$.rpt.txt
 
 all: \$(BITSTREAM_FILE)
 
-\$(BITSTREAM_FILE): \$(VERILOG_FILE)
-	\$(GW_SH) src/build/synth.tcl
-	\$(GW_SH) src/build/pnr.tcl
+\$(BITSTREAM_FILE) \$(REPORT_FILE): \$(VERILOG_FILE) rtl/*.tcl
+	\$(GW_SH) rtl/synth.tcl
+	@cat \$(REPORT_FILE) | grep -A32 "Resource Usage Summary"
 
-\$(VERILOG_FILE): \$(SOURCES) build.sbt src/board/tang-nano-9k.cst
+\$(VERILOG_FILE): \$(SOURCES) build.sbt rtl/tang-nano-9k.cst
 	sbt "runMain $package$.Main"
 
 clean:
@@ -27,4 +28,4 @@ clean:
 flash: \$(BITSTREAM_FILE)
 	openFPGALoader -b tangnano9k \$<
 
-.PHONY: all clan flash
+.PHONY: all clean flash

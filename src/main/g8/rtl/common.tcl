@@ -3,7 +3,7 @@
 # by andelf
 
 add_file -type verilog "rtl/$classname$.v"
-add_file -type cst "src/board/tang-nano-9k.cst"
+add_file -type cst "rtl/tang-nano-9k.cst"
 
 # NOTE: Tang Nano 9k is a GW1NR-9C device! not GW1NR-9
 set_device GW1NR-LV9QN88PC6/I5 -name GW1NR-9C
