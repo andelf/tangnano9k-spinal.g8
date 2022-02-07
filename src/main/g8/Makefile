@@ -20,18 +20,18 @@ all: \$(BITSTREAM_FILE)
 	sbt "runMain demo.Main"
 
 rtl/top-synth.json: \$(VERILOG_FILE)
-	\$(YOSYS) -p "read_verilog $^; synth_gowin -json $@" $^
+	\$(YOSYS) -p "read_verilog \$^; synth_gowin -json \$@" \$^
 
 rtl/top-netlist.json: rtl/top-synth.json rtl/tang-nano-9k.cst
-	\$(NEXTPNR) --json $< --write $@ --device \$(PART_NUMBER) --cst rtl/tang-nano-9k.cst
+	\$(NEXTPNR) --json \$< --write \$@ --device \$(PART_NUMBER) --cst rtl/tang-nano-9k.cst
 
 \$(BITSTREAM_FILE): rtl/top-netlist.json
-	gowin_pack -d \$(DEVICE) -o $@ $^
+	gowin_pack -d \$(DEVICE) -o \$@ \$^
 
 clean:
 	rm -rf impl \$(VERILOG_FILE) rtl/*.json
 
 flash: \$(BITSTREAM_FILE)
-	\$(PROGRAMMER) \$(PROGRAMMER_ARGS) $<
+	\$(PROGRAMMER) \$(PROGRAMMER_ARGS) \$<
 
 .PHONY: all clean flash
