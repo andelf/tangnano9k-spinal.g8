@@ -40,6 +40,12 @@ $ make  # translate verilog, synth, PnR
 $ make flash  # requires openFPGALoader
 ```
 
+## Non-IDE yosys + nextpnr
+
+```console
+$ sbt new andelf/tangnano9k-spinal.g8 --branch yosys
+```
+
 ## Template license
 Written in 2022 by andelf
 
