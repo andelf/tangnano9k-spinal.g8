@@ -17,7 +17,7 @@ DEVICE := GW1N-9C
 all: \$(BITSTREAM_FILE)
 
 \$(VERILOG_FILE): \$(SOURCES) build.sbt
-	sbt "runMain demo.Main"
+	sbt "runMain $package$.Main"
 
 rtl/top-synth.json: \$(VERILOG_FILE)
 	\$(YOSYS) -p "read_verilog \$^; synth_gowin -json \$@" \$^
